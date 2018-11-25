@@ -7,11 +7,25 @@ html {
 body {
   min-height: 100%;
   min-width: 100%;
-  background: linear-gradient(pink, violet);
+  background: linear-gradient(rgba(192, 255, 252, 0.904), blue);
 }
 
 button {
   font-size: 7px;
+}
+
+li {
+  background-color: red;
+}
+
+.aPriority {
+  background-color: red;
+}
+.bPriority {
+  background-color: yellow;
+}
+.cPriority {
+  background-color: lightgreen;  
 }
 
 #main-content {
