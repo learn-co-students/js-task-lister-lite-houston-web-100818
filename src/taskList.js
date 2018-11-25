@@ -11,7 +11,13 @@ const taskListArray = [];
 submitTaskButton.addEventListener('click', function(e){
     e.preventDefault()
     splitInput(taskDescriptionField.value).forEach(function(item){
-        taskListArray.push(item.trim())
+        taskObject = {}
+        taskObject.description = item
+        taskObject.priority = taskPriority.value
+        taskListArray.push(taskObject)
+    })
+    taskListArray.sort(function(a,b){
+        return a.priority.localeCompare(b.priority)
     })
     taskDescriptionField.value = ''
     render()
@@ -28,10 +34,10 @@ const render = function(){
 const renderTask = function(task,index){
     let doneButton = createDeleteButton(index)
     let listItem = document.createElement('li')
-    let text = document.createTextNode(task + " ")
+    let text = document.createTextNode(task.description + " ")
     listItem.appendChild(text)
     listItem.append(doneButton)
-    listItem.setAttribute("class", taskPriority.value)
+    listItem.setAttribute("class", task.priority)
     taskList.append(listItem)
 }
 

@@ -18,13 +18,13 @@ li {
   background-color: red;
 }
 
-.highPriority {
+.aPriority {
   background-color: red;
 }
-.mediumPriority {
+.bPriority {
   background-color: yellow;
 }
-.lowPriority {
+.cPriority {
   background-color: lightgreen;  
 }
 
