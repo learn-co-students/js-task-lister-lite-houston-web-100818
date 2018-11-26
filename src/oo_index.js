@@ -1,4 +1,4 @@
 
-document.addEventListener("DOMContentLoaded", () => {
-  const taskList = new TaskList();
-});
+// document.addEventListener("DOMContentLoaded", () => {
+//   const taskList = new TaskList();
+// });
