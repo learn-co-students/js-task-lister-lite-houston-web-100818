@@ -1,7 +1,7 @@
 // DOM Elements
 const taskDescription = document.querySelector("#new-task-description");
-const taskInput = TaskForm.querySelector("#new-task-input");
-const tasksList = document.querySelector("#tasks-list");
+const taskInput = document.querySelector("#new-task-description");
+const tasksList = document.querySelector("#list");
 const submitButton = document.querySelector("#submit");
 
 // Data
@@ -32,3 +32,5 @@ deleteButton.addEventListener("click", function(event) {
   tasks.splice(indexOftask, 1);
   render();
 });
+
+render();
