@@ -15,9 +15,7 @@ class TaskList {
 
   renderTasks() {
     let tasksRendered = ''
-    this.tasks.sort(function(a,b) {
-      return a.priority - b.priority
-    }).forEach(function(task) {
+    this.tasks.forEach(function(task) {
       tasksRendered += task.render()
     })
     return tasksRendered
