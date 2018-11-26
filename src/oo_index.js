@@ -1,21 +1,28 @@
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Initialize new Task List
   const taskList = new TaskList();
 
-  // DOM Elements
   const taskForm = document.querySelector('#create-task-form')
-  const textInput = document.querySelector('#new-task-description')
+  const taskDescription = document.querySelector('#new-task-description')
+  const taskPriority = document.querySelector('#new-task-priority')
   const tasksOnPage = document.querySelector('#tasks')
+
 
   taskForm.addEventListener('submit', () => {
     event.preventDefault();
-    taskList.createNewTask(textInput.value);
-    textInput.value = ''
+    taskList.createNewTask(taskDescription.value, taskPriority.value);
+    taskDescription.value = ''
+    taskPriority.value = ''
     render()
   })
 
-  // Helper Functions
+  tasksOnPage.addEventListener('click', function(event) {
+    if (event.target.nodeName === 'BUTTON') {
+      taskList.deleteTask(event.target.dataset.description)
+    }
+    render()
+  })
+
   const render = function() {
     tasksOnPage.innerHTML = taskList.renderTasks()
   }
